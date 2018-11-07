@@ -4,7 +4,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report
 
-from dataset import Dataset
 
 class DumbModel:
     def __init__(self, vocab_size=10_000):
