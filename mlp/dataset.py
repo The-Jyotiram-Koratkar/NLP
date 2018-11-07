@@ -1,9 +1,9 @@
 from pathlib import Path
 
 class Dataset:
-    def __init__(self):
-        self.train_dir = Path('data/raw/aclImdb/train')
-        self.test_dir = Path('data/raw/aclImdb/test')
+    def __init__(self, train_dir='data/raw/aclImdb/train', test_dir='data/raw/aclImdb/test'):
+        self.train_dir = train_dir
+        self.test_dir = test_dir
 
     def _get_set(self, limit, directory):
         x = []
