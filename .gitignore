@@ -2,3 +2,5 @@ data/
 env/
 *.pyc
 *.pickle
+__pycache__
+*.egg-info/
