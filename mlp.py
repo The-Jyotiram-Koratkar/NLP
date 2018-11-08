@@ -42,13 +42,23 @@ def train_model(dataset_dir, model_file, vocab_size):
 
     print(classification_report(y_test, y_pred))
 
+def ask_model(model_file, question):
+    print(f'Asking model {model_file} about "{question}"')
+
+    model = DumbModel.deserialize(model_file)
+
+    y_pred = model.predict_proba([question])
+    print(y_pred[0])
+
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
-    print(arguments)
 
     if arguments['train']:
         train_model(arguments['<dataset-dir>'],
                     arguments['<model-file>'],
                     int(arguments['--vocab-size'])
         )
+    elif arguments['ask']:
+        ask_model(arguments['<model-file>'],
+                  arguments['<question>'])
