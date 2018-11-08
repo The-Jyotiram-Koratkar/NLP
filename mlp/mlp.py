@@ -51,7 +51,7 @@ def ask_model(model_file, question):
     print(y_pred[0])
 
 
-if __name__ == '__main__':
+def main():
     arguments = docopt(__doc__)
 
     if arguments['train']:
@@ -62,3 +62,6 @@ if __name__ == '__main__':
     elif arguments['ask']:
         ask_model(arguments['<model-file>'],
                   arguments['<question>'])
+
+if __name__ == '__main__':
+    main()
