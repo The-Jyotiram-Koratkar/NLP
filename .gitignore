@@ -4,3 +4,4 @@ env/
 *.pickle
 __pycache__
 *.egg-info/
+.vscode
