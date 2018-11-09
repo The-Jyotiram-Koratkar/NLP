@@ -1,9 +1,9 @@
 """MLP - machine-learning-production
 
 Usage:
-    mlp.py train <dataset-dir> <model-file> [--vocab-size=<vocab-size>]
-    mlp.py ask <model-file> <question>
-    mlp.py (-h | --help)
+    mlp-cli train <dataset-dir> <model-file> [--vocab-size=<vocab-size>]
+    mlp-cli ask <model-file> <question>
+    mlp-cli (-h | --help)
 
 Arguments:
     <dataset-dir>  Directory with dataset.
@@ -51,7 +51,7 @@ def ask_model(model_file, question):
     print(y_pred[0])
 
 
-if __name__ == '__main__':
+def main():
     arguments = docopt(__doc__)
 
     if arguments['train']:
@@ -62,3 +62,6 @@ if __name__ == '__main__':
     elif arguments['ask']:
         ask_model(arguments['<model-file>'],
                   arguments['<question>'])
+
+if __name__ == '__main__':
+    main()
